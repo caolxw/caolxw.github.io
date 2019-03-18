@@ -159,6 +159,142 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-百度地图JavaScript-API基本用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/18/百度地图JavaScript-API基本用法/">百度地图JavaScript API基本用法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/18/百度地图JavaScript-API基本用法/" class="archive-article-date">
+  	<time datetime="2019-03-18T11:42:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="百度地图坐标系"><a href="#百度地图坐标系" class="headerlink" title="百度地图坐标系"></a>百度地图坐标系</h1><p>在介绍百度地图的使用之前，需要先了解三种不同的坐标系：  </p>
+<ul>
+<li>WGS84：国际标准坐标系，又称大地坐标系，也是目前广泛使用的GPS全球卫星定位系统使用的坐标系。</li>
+<li>GCJ02：又称火星坐标系，是由中国国家测绘局制订的地理信息系统的坐标系统。由WGS84坐标系经加密后的坐标系。腾讯，高德地图使用该种坐标系。</li>
+<li>BD09：为百度坐标系，在GCJ02坐标系基础上再次加密。其中bd09ll表示百度经纬度坐标，bd09mc表示百度墨卡托米制坐标。 非中国地区地图，服务坐标统一使用WGS84坐标。   </li>
+</ul>
+<p>在使用百度地图之前，要把非百度坐标转换成百度坐标。可以使用百度提供的转换API，也可以在网上检索转换的方法。  </p>
+<ul>
+<li>百度API的地址： <a href="http://lbsyun.baidu.com/jsdemo.htm#a5_2" target="_blank" rel="noopener">百度坐标转换示例</a>   </li>
+<li>Java实现三种坐标系的转换：<a href="https://github.com/caolxw/baiduMap/blob/master/PositionUtil.java" target="_blank" rel="noopener">坐标系转换示例</a></li>
+</ul>
+<h1 id="百度地图的展示"><a href="#百度地图的展示" class="headerlink" title="百度地图的展示"></a>百度地图的展示</h1><p>百度地图的接口是永久免费的，只需要申请成为百度开发者获取密钥就可以使用百度地图强大的功能。这里提供官方开发文档地址： <a href="http://lbsyun.baidu.com/index.php?title=jspopular3.0/guide/getkey" target="_blank" rel="noopener">百度地图JavaScript API</a>   </p>
+<ol>
+<li><p>使用之前确保你已经获得密钥，在页面的的头部引用百度地图的API文件：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=3.0&amp;ak=你的密钥&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">//这样不需要密钥也可以引用百度地图，但是有些功能貌似无法实现</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=1.1&amp;services=false&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写百度地图的容器，让地图充满整个网页：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</span><br><span class="line">	&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1.0, user-scalable=no&quot; /&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=3.0&amp;ak=你的密钥&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;title&gt;测试&lt;/title&gt;</span><br><span class="line">	&lt;style type=&quot;text/css&quot;&gt; </span><br><span class="line">		html&#123;height:100%&#125; </span><br><span class="line">		body&#123;height:100%;margin:0px;padding:0px&#125; </span><br><span class="line">		#allmap&#123;height:100%&#125; </span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;allmap&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果地图没有正常显示，查看报错信息是有关于icon的，就在头部添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;shortcut icon&quot; href=&quot;img/bitbug_favicon2.ico&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>href里面的地址如果不存在，他不会报错，会发出警告，所以不需要去创建.ico文件。</p>
+<ol start="3">
+<li>创建map实例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		var map = new BMap.Map(&quot;allmap&quot;);    // 创建Map实例</span><br><span class="line">		// 初始化地图,设置中心点坐标和地图级别,这里设置的是天安门为中心点</span><br><span class="line">		map.centerAndZoom(new BMap.Point(116.404, 39.915), 17);  </span><br><span class="line">		//添加地图类型控件</span><br><span class="line">		map.addControl(new BMap.MapTypeControl(&#123;</span><br><span class="line">			mapTypes:[</span><br><span class="line">	            BMAP_NORMAL_MAP,</span><br><span class="line">	            BMAP_HYBRID_MAP</span><br><span class="line">	        ]&#125;));</span><br><span class="line">		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放</span><br><span class="line">		map.addControl(new BMap.NavigationControl()); //添加平移缩放控件</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>更多地图的控件查看<a href="http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference_3_0.html" target="_blank" rel="noopener">JavaScript API v3.0类参考 </a><br>用浏览器打开html文件，就可以看到最基本的地图界面。  </p>
+<p>百度地图还支持自定义地图样式，参考：<a href="http://lbsyun.baidu.com/index.php?title=jspopular3.0/guide/custom" target="_blank" rel="noopener">个性化地图</a></p>
+<h1 id="百度地图的使用"><a href="#百度地图的使用" class="headerlink" title="百度地图的使用"></a>百度地图的使用</h1><p>仅仅一张地图显然不满足要求，百度地图还提供了各种各样的功能，记录几个基本的功能。</p>
+<ol>
+<li><p>标注点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//在point点创建标注</span><br><span class="line">var marker = new BMap.Marker(point);</span><br><span class="line">//将标注添加到地图中</span><br><span class="line">map.addOverlay(marker);  </span><br><span class="line"></span><br><span class="line">//删除地图上所有的标注点</span><br><span class="line">map.clearOverlays();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>信息窗口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var opts = &#123;    </span><br><span class="line">    width : 250,     // 信息窗口宽度    </span><br><span class="line">    height: 100,     // 信息窗口高度    </span><br><span class="line">    title : &quot;Hello&quot;  // 信息窗口标题   </span><br><span class="line">&#125;  </span><br><span class="line">//实例化信息窗口</span><br><span class="line">var infoWindow = new BMap.InfoWindow(&quot;World&quot;, opts);     </span><br><span class="line">//为标注点绑定事件</span><br><span class="line">marker.addEventListener(&quot;click&quot;, function()&#123;          </span><br><span class="line">		map.openInfoWindow(infoWindow,point); //开启信息窗口</span><br><span class="line">	&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//addEventListener方法有两个参数：监听的事件名称和事件触发时调用的函数。</span><br><span class="line">map.addEventListener(&quot;click&quot;, function()&#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取地图信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//获取地图当前缩放等级</span><br><span class="line">var zoom = map.getZoom();</span><br><span class="line">//获取所示地图经纬度范围</span><br><span class="line">var bounds = map.getBounds();       //获取地图d可视界面</span><br><span class="line">var sw = bounds.getSouthWest();     //获取左下角坐标</span><br><span class="line">var ne = bounds.getNorthEast();     //获取右上角坐标</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><a href="https://github.com/caolxw/baiduMap/blob/master/地图1.html" target="_blank" rel="noopener">百度地图基本用法实例</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度地图</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">code</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/18/百度地图JavaScript-API基本用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-电影-那些年，一直温暖我们的夏目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -193,11 +329,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">动漫</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">动漫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -381,15 +517,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">广告</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Nick</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -621,15 +757,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">广告</a>
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Nick</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,11 +769,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color5">百度地图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">广告</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Nick</a>
               </li>
             
             <div class="clearfix"></div>
