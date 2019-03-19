@@ -159,6 +159,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-百度地图处理大量坐标点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/百度地图处理大量坐标点/">百度地图处理大量坐标点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/19/百度地图处理大量坐标点/" class="archive-article-date">
+  	<time datetime="2019-03-19T13:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="海量数据点的处理"><a href="#海量数据点的处理" class="headerlink" title="海量数据点的处理"></a>海量数据点的处理</h2><p>在百度地图上标记点成千上万的时候，如果一次性把数据从后台传到前端，前端会加载的很慢或者直接不加载。为解决这个问题，百度地图提供了海量点和点聚合功能来处理。（<a href="http://lbsyun.baidu.com/jsdemo.htm#c1_4" target="_blank" rel="noopener">点聚合</a>，<a href="http://lbsyun.baidu.com/jsdemo.htm#c1_19" target="_blank" rel="noopener">海量点</a>）</p>
+<ul>
+<li>遗留问题：如果同时使用海量点和点聚合会产生双重标记，目前还没有找到两种方法的组合使用形式。</li>
+</ul>
+<p>但是当有十万个点以上的时候，海量点和点聚合还是会很卡顿。这时在海量点和点聚合的基础知识可以采用 <em>分区加载</em> 的方法。主要思路：  </p>
+<ol>
+<li>先获取可视界面的范围</li>
+<li>在数据库中取出范围内的坐标点</li>
+<li>数据传回前端显示</li>
+</ol>
+<p>当地图发生拖拽和缩放事件时，需要删除原有的标注点，重新加载地图上的标注点。当地图的缩放等级越来越小还是需要在页面加载所有的点，解决办法是为地图设置一个最小缩放等级或者设置缩放等级到一固定值时就不再显示标注点。<br>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度地图</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/code//" class="article-tag-list-link color5">code</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/19/百度地图处理大量坐标点/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-百度地图JavaScript-API基本用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -732,14 +835,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">动漫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">百度地图</a>
               </li>
              
@@ -749,6 +844,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">动漫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
