@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 百度地图 | 点滴</title>
+  <title>Netty入门：Tcp服务端 | 点滴</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="杭电大三学生，准备考研中，学习java后端开发，用此博客记录生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="点滴">
-<meta property="og:url" content="http://yoursite.com/tags/百度地图/index.html">
+  <meta name="description" content="Netty是什么Netty是比较流行的NIO（非阻塞I/O）框架之一，是java NIO编程的首选框架。可以说每一个做Java后端开发的程序员都需要会用Netty框架。学习Netty框架推荐一本书：《Netty权威指南》   准备好Netty 下载Netty软件包：Netty官网 解压压缩包，里面包含了各个模块的.jar包和源码，我们只需要netty-all-5.0.0.Alphal.jar 搭建">
+<meta name="keywords" content="Netty,java,网络编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Netty入门：Tcp服务端">
+<meta property="og:url" content="http://yoursite.com/2019/03/29/Netty入门：Tcp服务端/index.html">
 <meta property="og:site_name" content="点滴">
-<meta property="og:description" content="杭电大三学生，准备考研中，学习java后端开发，用此博客记录生活">
+<meta property="og:description" content="Netty是什么Netty是比较流行的NIO（非阻塞I/O）框架之一，是java NIO编程的首选框架。可以说每一个做Java后端开发的程序员都需要会用Netty框架。学习Netty框架推荐一本书：《Netty权威指南》   准备好Netty 下载Netty软件包：Netty官网 解压压缩包，里面包含了各个模块的.jar包和源码，我们只需要netty-all-5.0.0.Alphal.jar 搭建">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-29T13:09:52.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="点滴">
-<meta name="twitter:description" content="杭电大三学生，准备考研中，学习java后端开发，用此博客记录生活">
+<meta name="twitter:title" content="Netty入门：Tcp服务端">
+<meta name="twitter:description" content="Netty是什么Netty是比较流行的NIO（非阻塞I/O）框架之一，是java NIO编程的首选框架。可以说每一个做Java后端开发的程序员都需要会用Netty框架。学习Netty框架推荐一本书：《Netty权威指南》   准备好Netty 下载Netty软件包：Netty官网 解压压缩包，里面包含了各个模块的.jar包和源码，我们只需要netty-all-5.0.0.Alphal.jar 搭建">
   
     <link rel="alternative" href="/atom.xml" title="点滴" type="application/atom+xml">
   
@@ -157,56 +159,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Netty入门：Tcp服务端" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/19/百度地图处理大量坐标点/" class="archive-article-date">
-  	<time datetime="2019-03-19T13:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/百度地图处理大量坐标点/">百度地图处理大量坐标点</a>
+    <h1 class="article-title" itemprop="name">
+      Netty入门：Tcp服务端
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/29/Netty入门：Tcp服务端/" class="archive-article-date">
+  	<time datetime="2019-03-29T12:07:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Netty是什么"><a href="#Netty是什么" class="headerlink" title="Netty是什么"></a>Netty是什么</h2><p>Netty是比较流行的NIO（非阻塞I/O）框架之一，是java NIO编程的首选框架。可以说每一个做Java后端开发的程序员都需要会用Netty框架。<br>学习Netty框架推荐一本书：<strong>《Netty权威指南》</strong>  </p>
+<h2 id="准备好Netty"><a href="#准备好Netty" class="headerlink" title="准备好Netty"></a>准备好Netty</h2><ul>
+<li>下载Netty软件包：<a href="http://netty.io" target="_blank" rel="noopener">Netty官网</a></li>
+<li>解压压缩包，里面包含了各个模块的.jar包和源码，我们只需要netty-all-5.0.0.Alphal.jar</li>
+<li>搭建Netty应用工程，把jar加入工程即可<a id="more"></a>
+<h2 id="Netty服务端开发"><a href="#Netty服务端开发" class="headerlink" title="Netty服务端开发"></a>Netty服务端开发</h2>从黑盒的角度来学习Netty框架，暂时不看源码，只了解怎么运用。  </li>
+</ul>
+<p>1.首先需要创建两个NIO线程组，专用于网络事件的处理。  </p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">EventLoopGroup bossGroup</span> = new NioEventLoopGroup();</span><br><span class="line"><span class="attribute">EventLoopGroup workerGroup</span> = new NioEventLoopGroup();</span><br></pre></td></tr></table></figure>
+<p>一个线程组用于服务端接受客户端的连接，另一个用于进行SocketChannel的网络读写。  </p>
+<p>2.创建ServerBootstrap对象  </p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ServerBootstrap b</span> = new ServerBootstrap();</span><br></pre></td></tr></table></figure>
+<p>ServerBootstrap对象是Netty用于启动NIO服务端的辅助启动类，目的是降低服务端的开发复杂度。  </p>
+<p>3.配置辅助类  </p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">b.group(bossGroup, workerGroup)</span><br><span class="line">    .channel(NioServerSocketChannel.class)</span><br><span class="line">    .option(ChannelOption.SO_BACKLOG, <span class="number">1024</span>)</span><br><span class="line">	.childHandler(<span class="keyword">new</span> ChannelInitializer&lt;SocketChannel&gt;() &#123;	<span class="comment">//IO事件的处理类</span></span><br><span class="line"></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">initChannel</span><span class="params">(SocketChannel ch)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">			ch.pipeline().addLast(<span class="keyword">new</span> TCPTestHandler());</span><br><span class="line">		&#125;	</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>注意这里使用了匿名内部类，childHandler绑定的是I/O事件的处理类，主要用于处理网络I/O事件。  </p>
+<p>4.使用bind方法绑定监听端口，调用同步阻塞方法sync等待绑定操作完成，返回一个ChannelFuture对象，用于异步操作的通知回调。  </p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ChannelFuture future = b.bind<span class="params">(port)</span><span class="string">.sync</span><span class="params">()</span>;</span><br><span class="line">future.channel<span class="params">()</span><span class="string">.closeFuture</span><span class="params">()</span><span class="string">.sync</span><span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+<p>5.退出线程组，释放资源。  </p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bossGroup.shutdownGracefully()<span class="comment">;</span></span><br><span class="line">workerGroup.shutdownGracefully()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>接下来，需要完成Handler类的实现。TCPTestHandler继承自ChannelInboundHandlerAdapter，用于对网络事件进行读写操作，即客户端传来的数据和服务端的应答数据都在Handler类进行处理。先看channelRead方法：  </p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//处理客户端传到服务端的数据</span><br><span class="line"><span class="keyword">ByteBuf </span><span class="keyword">buf </span>= (<span class="keyword">ByteBuf) </span>msg<span class="comment">;</span></span><br><span class="line"><span class="keyword">byte[] </span>req = new <span class="keyword">byte[buf.readableBytes()];</span></span><br><span class="line"><span class="keyword">buf.readBytes(req);</span></span><br><span class="line"><span class="keyword">String </span><span class="keyword">body </span>= new <span class="keyword">String(req, </span><span class="string">"utf-8"</span>)<span class="comment">;</span></span><br><span class="line"><span class="symbol">System.out.println</span>(<span class="string">"The time server receive : "</span> + <span class="keyword">body);</span></span><br><span class="line"><span class="keyword">//返回应答消息</span></span><br><span class="line"><span class="keyword">String </span><span class="meta">data</span> = <span class="string">"服务端已接收"</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">byte[] </span>rep = <span class="meta">data</span>.getBytes()<span class="comment">;</span></span><br><span class="line"><span class="symbol">ctx.writeAndFlush</span>(Unpooled.copiedBuffer(rep))<span class="comment">;</span></span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">发生异常时的处理方法：</span><br></pre></td></tr></table></figure>
+<p>public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {<br>        ctx.close();<br>}<br><code>`</code></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>通过前面的代码可以看出来，代码非常的简洁，开发难度也很低(主要参考《Netty权威指南》)。<a href="https://github.com/caolxw/NetWork/tree/master/NettyTCPServer" target="_blank" rel="noopener">完整的Netty服务端代码</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度地图</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Netty</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -219,74 +244,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/29/Netty入门：Tcp服务端/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/18/百度地图JavaScript-API基本用法/" class="archive-article-date">
-  	<time datetime="2019-03-18T11:42:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/19/百度地图处理大量坐标点/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">百度地图处理大量坐标点</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/18/百度地图JavaScript-API基本用法/">百度地图JavaScript API基本用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">百度地图</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/code//" class="article-tag-list-link color5">code</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -309,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
