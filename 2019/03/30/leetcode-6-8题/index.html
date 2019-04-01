@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"hide","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ZigZag Conversion">
+<meta name="keywords" content="leetcode,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[leetcode]6-8题">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/leetcode-6-8题/index.html">
+<meta property="og:site_name" content="点滴">
+<meta property="og:description" content="ZigZag Conversion">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/assets/leetcode/NO6.png">
+<meta property="og:image" content="http://yoursite.com/assets/leetcode/NO7.png">
+<meta property="og:image" content="http://yoursite.com/assets/leetcode/NO8.png">
+<meta property="og:updated_time" content="2019-03-30T14:40:24.560Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[leetcode]6-8题">
+<meta name="twitter:description" content="ZigZag Conversion">
+<meta name="twitter:image" content="http://yoursite.com/assets/leetcode/NO6.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/03/30/leetcode-6-8题/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>[leetcode]6-8题 | 点滴</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">点滴</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">amnesia</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-技术笔记">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/code" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>技术笔记</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/leetcode-6-8题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ruby Cao">
+      <meta itemprop="description" content="It's only crazy until you do it.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="点滴">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[leetcode]6-8题
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-30 22:09:24 / 修改时间：22:40:24" itemprop="dateCreated datePublished" datetime="2019-03-30T22:09:24+08:00">2019-03-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ZigZag-Conversion"><a href="#ZigZag-Conversion" class="headerlink" title="ZigZag Conversion"></a>ZigZag Conversion</h1><p><img src="/assets/leetcode/NO6.png" alt="avatar"><br><a id="more"></a><br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public String convert(String s, int numRows) &#123;</span><br><span class="line">	<span class="keyword">if</span> (numRows &lt;= <span class="number">1</span>) &#123;<span class="keyword">return</span> s;&#125;</span><br><span class="line">        </span><br><span class="line">	int a = <span class="number">2</span> * numRows - <span class="number">2</span>;</span><br><span class="line">	StringBuilder sb = new StringBuilder();</span><br><span class="line">	<span class="keyword">for</span> (int <span class="built_in">i</span> = <span class="number">0</span>; <span class="built_in">i</span> &lt; numRows; <span class="built_in">i</span>++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">i</span> <span class="comment">% numRows == 0 || (i+1) % numRows == 0) &#123;</span></span><br><span class="line">			<span class="keyword">for</span> (int <span class="built_in">j</span> = <span class="built_in">i</span>; <span class="built_in">j</span> &lt; s.<span class="built_in">length</span>(); <span class="built_in">j</span>+=a) &#123;</span><br><span class="line">				sb.append(s.charAt(<span class="built_in">j</span>));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">for</span> (int <span class="built_in">j</span> = <span class="built_in">i</span>; <span class="built_in">j</span> &lt; s.<span class="built_in">length</span>(); <span class="built_in">j</span>+=a) &#123;</span><br><span class="line">				sb.append(s.charAt(<span class="built_in">j</span>));</span><br><span class="line">				<span class="keyword">if</span> ((<span class="built_in">j</span> + a - (<span class="built_in">j</span> <span class="comment">% a) * 2) &gt;= s.length()) &#123;continue;&#125;</span></span><br><span class="line">				sb.append(s.charAt(<span class="built_in">j</span> + a - (<span class="built_in">j</span> <span class="comment">% a) * 2));</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Reverse-Integer"><a href="#Reverse-Integer" class="headerlink" title="Reverse Integer"></a>Reverse Integer</h1><p><img src="/assets/leetcode/NO7.png" alt="avatar"></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">public</span> int <span class="keyword">reverse(int </span>x) &#123;</span><br><span class="line">	int <span class="keyword">rev </span>= <span class="number">0</span><span class="comment">;</span></span><br><span class="line">	<span class="meta">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">		int <span class="keyword">pop </span>= x % <span class="number">10</span><span class="comment">;</span></span><br><span class="line">		x /= <span class="number">10</span><span class="comment">;</span></span><br><span class="line">		<span class="meta">if</span> (<span class="keyword">rev </span>&gt; Integer.MAX_VALUE/<span class="number">10</span> <span class="title">||</span> </span><br><span class="line">        	   (<span class="keyword">rev </span>== Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; <span class="keyword">pop </span>&gt; <span class="number">7</span>)) </span><br><span class="line">            &#123;return <span class="number">0</span><span class="comment">;&#125;</span></span><br><span class="line">		<span class="meta">if</span> (<span class="keyword">rev </span>&lt; Integer.MIN_VALUE/<span class="number">10</span> <span class="title">||</span> </span><br><span class="line">				(<span class="keyword">rev </span>== Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; <span class="keyword">pop </span>&lt; -<span class="number">8</span>)) </span><br><span class="line">            &#123;return <span class="number">0</span><span class="comment">;&#125;</span></span><br><span class="line">        <span class="keyword">rev </span>= <span class="keyword">rev </span>* <span class="number">10</span> + <span class="keyword">pop;</span></span><br><span class="line"><span class="keyword">	</span>&#125;</span><br><span class="line">	return <span class="keyword">rev;</span></span><br><span class="line"><span class="keyword">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="String-to-Integer-atoi"><a href="#String-to-Integer-atoi" class="headerlink" title="String to Integer (atoi)"></a>String to Integer (atoi)</h1><p><img src="/assets/leetcode/NO8.png" alt="avatar"></p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> myAtoi(String <span class="keyword">str</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> re = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">str</span>.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">str</span>.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">str</span>.charAt(i) == <span class="string">' '</span>) &#123;<span class="keyword">continue</span>;&#125;    <span class="comment">//跳过开头的所有空格</span></span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">str</span>.charAt(i) == <span class="string">'-'</span>) &#123;</span><br><span class="line">                <span class="keyword">str</span> = <span class="keyword">str</span>.substring(i);</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">str</span>.length() == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                i = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">str</span>.length() &gt; i &amp;&amp; </span><br><span class="line">                        <span class="keyword">str</span>.charAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; <span class="keyword">str</span>.charAt(i) &lt;= <span class="string">'9'</span>) &#123;i ++;&#125;   <span class="comment">//取到所有数字</span></span><br><span class="line">                <span class="keyword">str</span> = <span class="keyword">str</span>.substring(<span class="number">0</span>,i);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="keyword">str</span>.length(); j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (re * (<span class="number">-1</span>) &lt; Integer.MIN_VALUE / <span class="number">10</span> || </span><br><span class="line">                            re*(<span class="number">-1</span>) == Integer.MIN_VALUE / <span class="number">10</span> &amp;&amp; </span><br><span class="line">                            <span class="keyword">str</span>.charAt(j) &gt; <span class="string">'8'</span>) &#123;</span><br><span class="line">                        <span class="keyword">return</span> Integer.MIN_VALUE;</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        re = re * <span class="number">10</span> + <span class="keyword">str</span>.charAt(j) - <span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                re = (<span class="number">-1</span>) * re;</span><br><span class="line">                </span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">str</span>.charAt(i) == <span class="string">'+'</span>) &#123;</span><br><span class="line">                <span class="keyword">str</span> = <span class="keyword">str</span>.substring(i);</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">str</span>.length() == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                i = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">str</span>.length() &gt; i &amp;&amp; </span><br><span class="line">                            <span class="keyword">str</span>.charAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; <span class="keyword">str</span>.charAt(i) &lt;= <span class="string">'9'</span>) &#123;i ++;&#125;   <span class="comment">//取到所有数字</span></span><br><span class="line">                <span class="keyword">str</span> = <span class="keyword">str</span>.substring(<span class="number">0</span>,i);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="keyword">str</span>.length(); j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (re &gt; Integer.MAX_VALUE / <span class="number">10</span> || </span><br><span class="line">                            re == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; </span><br><span class="line">                            <span class="keyword">str</span>.charAt(j) &gt; <span class="string">'7'</span>) &#123;</span><br><span class="line">                        re = Integer.MAX_VALUE;</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        re = re * <span class="number">10</span> + <span class="keyword">str</span>.charAt(j) - <span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">str</span>.charAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; <span class="keyword">str</span>.charAt(i) &lt;= <span class="string">'9'</span>) &#123;</span><br><span class="line">                <span class="keyword">str</span> = <span class="keyword">str</span>.substring(i);</span><br><span class="line">                i = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">str</span>.length() &gt; i &amp;&amp; </span><br><span class="line">                            <span class="keyword">str</span>.charAt(i) &gt;= <span class="string">'0'</span> &amp;&amp; <span class="keyword">str</span>.charAt(i) &lt;= <span class="string">'9'</span>) &#123;i ++;&#125;   <span class="comment">//取到所有数字</span></span><br><span class="line">                <span class="keyword">str</span> = <span class="keyword">str</span>.substring(<span class="number">0</span>,i);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="keyword">str</span>.length(); j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (re &gt; Integer.MAX_VALUE / <span class="number">10</span> || </span><br><span class="line">                            re == Integer.MAX_VALUE / <span class="number">10</span> &amp;&amp; </span><br><span class="line">                            <span class="keyword">str</span>.charAt(j) &gt; <span class="string">'7'</span>) &#123;</span><br><span class="line">                        re = Integer.MAX_VALUE;</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        re = re * <span class="number">10</span> + <span class="keyword">str</span>.charAt(j) - <span class="string">'0'</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                re = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><a href="https://github.com/caolxw/LeetCodes" target="_blank" rel="noopener">github地址</a>   </p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/29/Netty入门：Tcp服务端/" rel="next" title="Netty入门：Tcp服务端">
+                <i class="fa fa-chevron-left"></i> Netty入门：Tcp服务端
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Ruby Cao">
+            
+              <p class="site-author-name" itemprop="name">Ruby Cao</p>
+              <div class="site-description motion-element" itemprop="description">It's only crazy until you do it.</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/caolxw" title="GitHub &rarr; https://github.com/caolxw" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:18767119831@163.com" title="E-Mail &rarr; mailto:18767119831@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/da-wang-jiao-ni-qu-xun-shan-33/activities" title="知乎 &rarr; https://www.zhihu.com/people/da-wang-jiao-ni-qu-xun-shan-33/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-book"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://weibo.com/u/5484187614?topnav=1&wvr=6&topsug=1&is_hot=1" title="微博 &rarr; https://weibo.com/u/5484187614?topnav=1&wvr=6&topsug=1&is_hot=1" rel="noopener" target="_blank"><i class="fa fa-fw fa-commenting"></i>微博</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ZigZag-Conversion"><span class="nav-number">1.</span> <span class="nav-text">ZigZag Conversion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reverse-Integer"><span class="nav-number">2.</span> <span class="nav-text">Reverse Integer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String-to-Integer-atoi"><span class="nav-number">3.</span> <span class="nav-text">String to Integer (atoi)</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-bolt"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ruby Cao</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/three/three.min.js"></script>
+
+  
+  <script src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
