@@ -327,6 +327,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/12/数据库无法进入和10061错误处理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ruby Cao">
+      <meta itemprop="description" content="分享生活，记录学习">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="点滴">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/12/数据库无法进入和10061错误处理/" class="post-title-link" itemprop="url">数据库无法进入和10061错误处理</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-12 19:42:01 / 修改时间：21:08:05" itemprop="dateCreated datePublished" datetime="2019-04-12T19:42:01+08:00">2019-04-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在我休息了一天去公司之后，被告知数据库不能使用了，需要重装。我：？？？<br>不信邪的我决定尝试一下。<br>第一个错误：<strong>Found option without preceding group in config file D:\mysql\mysql-8.0.13-winx64\my.ini at line 1.</strong> 在解决完这个问题之后，又出现了一个新的问题：<strong>Can’t connect to MYSQL server on ‘localhost’ (10061)</strong><br>问题截图如下：<br><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-12-01.png" alt="avatar"><br>接下来一个一个的解决。</p>
+<h2 id="Found-option-without-preceding-group-in-config-file-D-mysql-mysql-8-0-13-winx64-my-ini-at-line-1"><a href="#Found-option-without-preceding-group-in-config-file-D-mysql-mysql-8-0-13-winx64-my-ini-at-line-1" class="headerlink" title="Found option without preceding group in config file D:\mysql\mysql-8.0.13-winx64\my.ini at line 1."></a>Found option without preceding group in config file D:\mysql\mysql-8.0.13-winx64\my.ini at line 1.</h2><p>这个问题就是所示位置的配置文件的问题，只需要把my.ini用记事本打开，另存为的时候把编码方式修改为 <strong>ANS</strong><br><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-12-04.png" alt="avatar"></p>
+<h2 id="10061错误"><a href="#10061错误" class="headerlink" title="10061错误"></a>10061错误</h2><p>这个错误是Mysql登陆失败的报错，引起的原因有很多，这里只回答我的问题：是因为没有启动MYSQL服务。<a href="https://blog.csdn.net/Angiexia/article/details/8931880" target="_blank" rel="noopener">10061错误完整分析</a><br>知道原因就直接打开服务就好，但是在输入net start mysql的时候又出错了。<br><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-12-02.png" alt="avatar"><br>这个问题的解决办法就是用管理员的身份运行cmd，再启动MYSQL服务。</p>
+<ul>
+<li>一次性方法：在系统盘中找到Windows/System32/cmd.exe右击选择以管理员身份运行。</li>
+<li>永久性方法：把cmd.exe的快捷方式放到桌面，右击选择 <strong>属性 -&gt;快捷方式 -&gt;高级 -&gt;以管理员身份运行 -&gt;确定。</strong> 以后点击快捷方式就是以管理员运行了。</li>
+</ul>
+<p><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-12-03.png" alt="avatar"><br>之后就可以正常运行了。很简单，没有想象中那么大的问题。（同事说的时候还吓了我一跳）</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/Linux中sudo-cd报错原因/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -372,7 +540,7 @@
                 
               
 
-              <time title="创建时间：2019-04-08 19:59:40 / 修改时间：20:02:16" itemprop="dateCreated datePublished" datetime="2019-04-08T19:59:40+08:00">2019-04-08</time>
+              <time title="创建时间：2019-04-08 19:59:40 / 修改时间：20:04:21" itemprop="dateCreated datePublished" datetime="2019-04-08T19:59:40+08:00">2019-04-08</time>
             
 
             
@@ -987,174 +1155,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/基于springboot搭建webservice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ruby Cao">
-      <meta itemprop="description" content="分享生活，记录学习">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="点滴">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/03/基于springboot搭建webservice/" class="post-title-link" itemprop="url">基于springboot搭建webservice</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-03 09:23:23 / 修改时间：09:54:49" itemprop="dateCreated datePublished" datetime="2019-04-03T09:23:23+08:00">2019-04-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>使用springboot + cxf 搭建webservice服务端</p>
-<h2 id="1-添加依赖"><a href="#1-添加依赖" class="headerlink" title="1.添加依赖"></a>1.添加依赖</h2><p>在pom.xml中添加webservice cxf依赖<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.cxf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cxf-rt-frontend-jaxws<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.cxf<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cxf-rt-transports-http<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/03/基于springboot搭建webservice/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1203,7 +1203,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1283,7 +1283,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
