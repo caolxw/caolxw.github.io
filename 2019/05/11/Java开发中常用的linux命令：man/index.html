@@ -96,22 +96,20 @@
 
 
 
-  <meta name="description" content="引言在linux系统里，常常会出现权限不够的问题，比如我想要新建一个文件夹，输入命令：1mkdir test 被通知没有权限，这时候可以使用：1sudo mkdir test 成功建好一个文件夹。但是，今天在使用 cd 命令的时候被通知权限不够，所以采用了上述的方法，竟然被通知 sudo: cd: 找不到命令">
-<meta name="keywords" content="Linux,sudo">
+  <meta name="description" content="Java开发人员一般都需要在服务器上部署项目，而服务器大多是linux系统，所以需要Java开发人员知道一些常用的命令。 终极大杀器：manman命令是Linux下的帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息。所有有任何不懂得指令都可以使用man来获得帮助。">
+<meta name="keywords" content="linux,man">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux中sudo cd报错原因">
-<meta property="og:url" content="http://yoursite.com/2019/04/08/Linux中sudo-cd报错原因/index.html">
+<meta property="og:title" content="Java开发中常用的linux命令：man">
+<meta property="og:url" content="http://yoursite.com/2019/05/11/Java开发中常用的linux命令：man/index.html">
 <meta property="og:site_name" content="点滴">
-<meta property="og:description" content="引言在linux系统里，常常会出现权限不够的问题，比如我想要新建一个文件夹，输入命令：1mkdir test 被通知没有权限，这时候可以使用：1sudo mkdir test 成功建好一个文件夹。但是，今天在使用 cd 命令的时候被通知权限不够，所以采用了上述的方法，竟然被通知 sudo: cd: 找不到命令">
+<meta property="og:description" content="Java开发人员一般都需要在服务器上部署项目，而服务器大多是linux系统，所以需要Java开发人员知道一些常用的命令。 终极大杀器：manman命令是Linux下的帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息。所有有任何不懂得指令都可以使用man来获得帮助。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://powl6ubyo.bkt.clouddn.com/2019-04-08-01.png">
-<meta property="og:image" content="http://powl6ubyo.bkt.clouddn.com/2019-04-08-02.png">
-<meta property="og:image" content="http://powl6ubyo.bkt.clouddn.com/2019-04-08-03.png">
-<meta property="og:updated_time" content="2019-04-08T12:04:21.998Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190507104454338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODU2NjMz,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-05-11T07:33:56.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux中sudo cd报错原因">
-<meta name="twitter:description" content="引言在linux系统里，常常会出现权限不够的问题，比如我想要新建一个文件夹，输入命令：1mkdir test 被通知没有权限，这时候可以使用：1sudo mkdir test 成功建好一个文件夹。但是，今天在使用 cd 命令的时候被通知权限不够，所以采用了上述的方法，竟然被通知 sudo: cd: 找不到命令">
-<meta name="twitter:image" content="http://powl6ubyo.bkt.clouddn.com/2019-04-08-01.png">
+<meta name="twitter:title" content="Java开发中常用的linux命令：man">
+<meta name="twitter:description" content="Java开发人员一般都需要在服务器上部署项目，而服务器大多是linux系统，所以需要Java开发人员知道一些常用的命令。 终极大杀器：manman命令是Linux下的帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息。所有有任何不懂得指令都可以使用man来获得帮助。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190507104454338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODU2NjMz,size_16,color_FFFFFF,t_70">
 
 
 
@@ -119,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/08/Linux中sudo-cd报错原因/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/11/Java开发中常用的linux命令：man/">
 
 
 
@@ -129,7 +127,7 @@
   };
 </script>
 
-  <title>Linux中sudo cd报错原因 | 点滴</title>
+  <title>Java开发中常用的linux命令：man | 点滴</title>
   
 
 
@@ -332,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/Linux中sudo-cd报错原因/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/11/Java开发中常用的linux命令：man/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="听着歌的小碗">
@@ -349,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux中sudo cd报错原因
+          <h1 class="post-title" itemprop="name headline">Java开发中常用的linux命令：man
 
               
             
@@ -375,7 +373,7 @@
                 
               
 
-              <time title="创建时间：2019-04-08 19:59:40 / 修改时间：20:04:21" itemprop="dateCreated datePublished" datetime="2019-04-08T19:59:40+08:00">2019-04-08</time>
+              <time title="创建时间：2019-05-11 15:30:25 / 修改时间：15:33:56" itemprop="dateCreated datePublished" datetime="2019-05-11T15:30:25+08:00">2019-05-11</time>
             
 
             
@@ -432,20 +430,81 @@
       
 
       
-        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在linux系统里，常常会出现权限不够的问题，比如我想要新建一个文件夹，输入命令：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> <span class="keyword">test</span></span><br></pre></td></tr></table></figure></p>
-<p>被通知没有权限，这时候可以使用：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="keyword">mkdir</span> <span class="keyword">test</span></span><br></pre></td></tr></table></figure></p>
-<p>成功建好一个文件夹。<br>但是，今天在使用 cd 命令的时候被通知权限不够，所以采用了上述的方法，竟然被通知 <strong>sudo: cd: 找不到命令</strong><br><a id="more"></a><br><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-08-01.png" alt="avatar"></p>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>既然mkdir可以使用sudo可以使用，那么说明这个方法是可行的，那么问题的关键就在于 cd 和 mkdir 有什么不同，于是使用type查看。<br><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-08-02.png" alt="avatar"><br>从截图中可以看出：</p>
+        <p>Java开发人员一般都需要在服务器上部署项目，而服务器大多是linux系统，所以需要Java开发人员知道一些常用的命令。</p>
+<h2 id="终极大杀器：man"><a href="#终极大杀器：man" class="headerlink" title="终极大杀器：man"></a>终极大杀器：man</h2><p>man命令是Linux下的帮助指令，通过man指令可以查看Linux中的指令帮助、配置文件帮助和编程帮助等信息。所有有任何不懂得指令都可以使用man来获得帮助。<br><img src="https://img-blog.csdnimg.cn/20190507104454338.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODU2NjMz,size_16,color_FFFFFF,t_70" alt="man man"></p>
+<a id="more"></a>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>man(选项)(参数)</p>
+</blockquote>
+<p> 选项</p>
+<blockquote>
+<p>-a：在所有的man帮助手册中搜索；<br>-f：等价于whatis指令，显示给定关键字的简短描述信息；<br>-P：指定内容时使用分页程序；<br>-M：指定man手册搜索的路径。</p>
+</blockquote>
+<p>参数</p>
+<blockquote>
+<p>数字：指定从哪本man手册中搜索帮助；<br>关键字：指定要搜索帮助的关键字。</p>
+</blockquote>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>使用man，例如我们输入 man man，它会在最左上角显示“MAN（1）”，在这里，“MAN”表示手册名称，而“（1）”表示该手册位于第一节章；如果，我们输入“man ifconfig”它会在最左上角显示“IFCONFIG（8）”。所以也可以这样输入命令：“man [章节号] 手册名称”。</p>
+<hr>
+<p><strong>手册章节说明：</strong></p>
 <ul>
-<li>cd是Linux内建的命令</li>
-<li>mkdir是一个外部命令，即为一个应用程序</li>
-<li>而sudo仅仅只对应用程序起作用，sudo foo只意味着以root权限运行foo程序</li>
+<li>1 Executable programs or shell commands</li>
+<li>2 System calls (functions   provided by the kernel)</li>
+<li>3 Library calls (functions within program libraries)</li>
+<li>4 Special files (usually found in /dev)</li>
+<li>5 File formats and   conventions eg /etc/passwd</li>
+<li>6 Games</li>
+<li>7 Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7)</li>
+<li>8 System administration commands (usually only for root)</li>
+<li>9 Kernel routines [Non standard]</li>
 </ul>
-<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><ol>
-<li>使用sudo -i命令提升用户权限</li>
-<li>使用sudo -s命令打开特殊shell</li>
-</ol>
-<p>使用方法二的示例：<br><img src="http://powl6ubyo.bkt.clouddn.com/2019-04-08-03.png" alt="avatar"></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>代表内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>使用者在shell中可以操作的指令或可执行档</td>
+</tr>
+<tr>
+<td>2</td>
+<td>系統核心可呼叫的函数与工具等</td>
+</tr>
+<tr>
+<td>3</td>
+<td>一些常用的函数(function)与函数库(library)，大部分是C的函数库(libc)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>装置档案的说明，通常在/dev下的档案</td>
+</tr>
+<tr>
+<td>5</td>
+<td>设定档或者是某些档案的格式</td>
+</tr>
+<tr>
+<td>6</td>
+<td>游戏</td>
+</tr>
+<tr>
+<td>7</td>
+<td>惯例与协定等，例如Linux档案系统、网络协定、ASCII code等等的說明</td>
+</tr>
+<tr>
+<td>8</td>
+<td>系統管理員可用的管理指令</td>
+</tr>
+<tr>
+<td>9</td>
+<td>跟操作系统内核有关的文件</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -469,9 +528,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+            <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
           
-            <a href="/tags/sudo/" rel="tag"><i class="fa fa-tag"></i> sudo</a>
+            <a href="/tags/man/" rel="tag"><i class="fa fa-tag"></i> man</a>
           
         </div>
       
@@ -484,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/你需要看的《钢之炼金术师》/" rel="next" title="你需要看的《钢之炼金术师》">
-                <i class="fa fa-chevron-left"></i> 你需要看的《钢之炼金术师》
+              <a href="/2019/04/12/数据库无法进入和10061错误处理/" rel="next" title="数据库无法进入和10061错误处理">
+                <i class="fa fa-chevron-left"></i> 数据库无法进入和10061错误处理
               </a>
             
           </div>
@@ -493,10 +552,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/12/数据库无法进入和10061错误处理/" rel="prev" title="数据库无法进入和10061错误处理">
-                数据库无法进入和10061错误处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -741,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考"><span class="nav-number">2.</span> <span class="nav-text">思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">3.</span> <span class="nav-text">解决办法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#终极大杀器：man"><span class="nav-number">1.</span> <span class="nav-text">终极大杀器：man</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用说明"><span class="nav-number">3.</span> <span class="nav-text">使用说明</span></a></li></ol></div>
             
 
           </div>
